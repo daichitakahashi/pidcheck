@@ -6,45 +6,49 @@ macOS, Linux, Windowsの全てで`os.Getppid()`を実行IDとして使うこと�
 
 # macOS
 ```shell
+$ echo $$
+6144
 $ go test -v -count 1 ./...
 === RUN   Test
-    pid_test.go:9: PID: 7503
-    pid_test.go:10: PID of parent: 7463
+    pid_test.go:9: PID: 8547
+    pid_test.go:10: PID of parent: 8506
 --- PASS: Test (0.00s)
 PASS
-ok      pidcheck        0.208s
+ok      pidcheck        0.316s
 === RUN   Test
-    pid_test.go:9: PID: 7504
-    pid_test.go:10: PID of parent: 7463
+    pid_test.go:9: PID: 8548
+    pid_test.go:10: PID of parent: 8506
 --- PASS: Test (0.00s)
 PASS
-ok      pidcheck/sub    0.147s
+ok      pidcheck/sub    0.508s
 === RUN   Test
-    pid_test.go:9: PID: 7505
-    pid_test.go:10: PID of parent: 7463
+    pid_test.go:9: PID: 8549
+    pid_test.go:10: PID of parent: 8506
 --- PASS: Test (0.00s)
 PASS
-ok      pidcheck/sub2   0.381s
+ok      pidcheck/sub2   0.668s
 ```
 
 # Linux
 ```shell
+$ echo $$
+1
 $ go test -v -count 1 ./...
 === RUN   Test
-    pid_test.go:9: PID: 1337
-    pid_test.go:10: PID of parent: 8
+    pid_test.go:9: PID: 1357
+    pid_test.go:10: PID of parent: 7
 --- PASS: Test (0.00s)
 PASS
-ok      pidcheck        0.003s
+ok      pidcheck        0.002s
 === RUN   Test
-    pid_test.go:9: PID: 1338
-    pid_test.go:10: PID of parent: 8
+    pid_test.go:9: PID: 1361
+    pid_test.go:10: PID of parent: 7
 --- PASS: Test (0.00s)
 PASS
 ok      pidcheck/sub    0.002s
 === RUN   Test
-    pid_test.go:9: PID: 1339
-    pid_test.go:10: PID of parent: 8
+    pid_test.go:9: PID: 1367
+    pid_test.go:10: PID of parent: 7
 --- PASS: Test (0.00s)
 PASS
 ok      pidcheck/sub2   0.002s
