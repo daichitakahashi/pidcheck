@@ -26,3 +26,26 @@ ok      pidcheck/sub    0.147s
 PASS
 ok      pidcheck/sub2   0.381s
 ```
+
+# Linux
+```shell
+$ go test -v -count 1 ./...
+=== RUN   Test
+    pid_test.go:9: PID: 1337
+    pid_test.go:10: PID of parent: 8
+--- PASS: Test (0.00s)
+PASS
+ok      pidcheck        0.003s
+=== RUN   Test
+    pid_test.go:9: PID: 1338
+    pid_test.go:10: PID of parent: 8
+--- PASS: Test (0.00s)
+PASS
+ok      pidcheck/sub    0.002s
+=== RUN   Test
+    pid_test.go:9: PID: 1339
+    pid_test.go:10: PID of parent: 8
+--- PASS: Test (0.00s)
+PASS
+ok      pidcheck/sub2   0.002s
+```
